@@ -197,16 +197,39 @@ h1, h2 {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
 }
 
+.about-img {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  position: relative;
+}
+
 .about-img img {
-  max-width: 250px;
+  width: 100%;
+  max-width: 100%;
   border-radius: 10px;
+}
+
+.about-img::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 60%;
+  height: 60%;
+  border: 5px solid var(--primary-color);
+  border-radius: 10px;
+  z-index: -1;
 }
 
 .about-content {
   flex: 1;
+  min-width: 280px;
+  max-width: 600px;
 }
 
 .skills {
@@ -237,6 +260,8 @@ h1, h2 {
   background: #007bff;
   transition: width 1.5s ease;
 }
+
+
 
 /* Experience Section */
 .experience {
@@ -411,6 +436,21 @@ footer {
     margin: auto;
   }
 }
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-img::before {
+    top: -10px;
+    left: -10px;
+    width: 50%;
+    height: 50%;
+  }
+}
+
 
     /* Resume section */
     .resume-section {
